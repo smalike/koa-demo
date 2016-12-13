@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+coverage
+*~
+*.swp
+static
+npm-debug.log
+log
+.vscode
+dest
+build
+.idea
+lib
