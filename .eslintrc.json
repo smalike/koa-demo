@@ -36,7 +36,7 @@
     "no-console": 0,
     // 允许花括号内两侧不空格
     "object-curly-spacing": 0,
-    // 未使的变量,只警告
+    // 不准许使用 var,
     "no-unused-vars": 1,
     // 未使的变量,只警告
     "no-use-before-define": 2,
