@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+import fs from 'fs';
 import koa from 'koa';
 import koaRouter from 'koa-router';
 
@@ -6,16 +8,38 @@ const router = new koaRouter();
 
 router.get('/', (ctx, next) => {
   console.log('//');
+  let context = ctx;
+  context.status = 200;
+  context.body = 'success!';
   return next();
 });
 
-router.get('/search/:id/:name', (ctx, next) => {
-  console.log('/search');
-  console.log('ctx.params.id', ctx.params.id);
-  console.log('ctx.params.name', ctx.params.name);
+function readFile(filePath) {
+  return new Promise((resolve, reject) => {
+    fs.stat(filePath, (err, stat) => {
+      if (err || !stat || !stat.isFile()) {
+        return reject(err);
+      }
+      fs.readFile(filePath, (err1, content) => {
+        if (err) {
+          return reject(err);
+        }
+        resolve(content);
+      });
+    });
+  });
+}
+
+router.get('/contact/*', async (ctx, next) => {
+  console.log('/contact');
+  let filePath = ctx.params['0'];
+  console.log('filePath', filePath);
+  let content = await readFile(filePath);
+  console.log('content', content);
   let context = ctx;
   context.status = 200;
-  context.body = `${ctx.params.name}\nHello world!\n${ctx.params.id}`;
+  context.body = content;
+  context.type = 'text/html';
   return next();
 });
 
