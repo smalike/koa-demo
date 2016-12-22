@@ -14,13 +14,16 @@
 ## 备注
 
 ### 配置 Windows 开发环境
+1. windows Nodejs 开发环境说明
 https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#compiling-native-addon-modules
-设置淘宝 npm 镜像库
+2. 设置淘宝 npm 镜像库
 npm config set registry=https://registry.npm.taobao.org/
-采用ESLint Javascript 静态语法检查工具，npm install eslint -g 全局安装。eslint -v 检查安装是否成功。项目根目录增加 .eslintrc 配置文件。
+npm config set disturl=https://npm.taobao.org/dist/
+3. 采用 ESLint Javascript 静态语法检查工具
+npm install eslint -g 全局安装。eslint -v 检查安装是否成功。项目根目录增加 .eslintrc 配置文件。
 http://eslint.org/docs/user-guide/configuring
 采用 Airbnb Javascript 开发规范
-https://github.com/airbnb/javascriptk
+https://github.com/airbnb/javascript
 
 ### Atom（https://atom.io/） 开发配置
 1. 基本设置
@@ -30,11 +33,11 @@ Core >>
 Editor >>
 设置 Tab length: 2
 System >>
-勾选 Show in file context menu
+勾选 Show in file context menu 增加右键打开项
 勾选 Show in folder context menu
 
 1.  安装相关插件
-linter linter-eslint：
+linter linter-eslint: 代码校验
 git-plus：Git 命令支持
 hyperclick：跳转变量定义位置
 highlight-selected：高亮选择变量
@@ -50,7 +53,7 @@ docblockr: 文档注释
 atom-ternjs: 代码提示
 autosave: 自动保存
 
-命令：
+安装命令：
 apm install linter linter-eslint git-plus hyperclick js-hyperclick highlight-selected minimap atom-beautify platformio-ide-terminal file-icons color-picker elastic-tabstops autocomplete-paths docblockr atom-ternjs autosave
 
 可选：
