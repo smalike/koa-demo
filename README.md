@@ -69,3 +69,4 @@ ctrl+alt+[ 折叠
 ctrl+alt+] 展开
 ctrl+m 找到对应括号或标签
 More: Settings >> keybindings
+
